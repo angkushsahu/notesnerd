@@ -80,7 +80,7 @@ const Dashboard = () => {
 						<Link to="/notes" className="description">
 							<strong>Total Notes : </strong> {totalNotes}
 						</Link>
-						<Link to="/notes" className="description">
+						<Link to="/notes/important" className="description">
 							<strong>Important Notes : </strong> {totalImportantNotes}
 						</Link>
 					</div>
