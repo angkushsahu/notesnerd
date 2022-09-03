@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: "NunitoSans-Bold";
+	src: url("../assets/fonts/NunitoSans-Black.ttf");
+}
+@font-face {
+	font-family: "NunitoSans-SemiBold";
+	src: url("../assets/fonts/NunitoSans-Bold.ttf");
+}
+@font-face {
+	font-family: "NunitoSans-Regular";
+	src: url("../assets/fonts/NunitoSans-Regular.ttf");
+}
+
+@layer components {
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: lightgray #f5f5f5;
+		@apply font-nunito-regular;
+	}
+	*::-webkit-scrollbar {
+		width: 0.5rem;
+		background-color: #f5f5f5;
+	}
+	*::-webkit-scrollbar-thumb {
+		background-color: lightgray;
+		width: 0.2rem;
+		border-radius: 1rem;
+	}
+	.root {
+		@apply isolate min-h-screen bg-offwhite before:fixed before:-z-[10] before:-top-40 before:right-4 before:w-60 before:h-60 sm:before:w-96 sm:before:h-96 before:bg-primary before:filter before:blur-xl before:rounded-full after:fixed after:-z-[10] after:bottom-10 after:left-10 after:w-40 after:h-40 after:bg-primary after:filter after:blur-xl after:rounded-full;
+	}
+	.fill_screen {
+		@apply min-h-[calc(100vh-5.5rem)];
+	}
+	.center_screen {
+		@apply max-w-7xl mx-auto;
+	}
+	h1 {
+		@apply text-3xl sm:text-4xl font-bold font-nunito-bold;
+	}
+	h2 {
+		@apply text-xl sm:text-2xl font-semibold font-nunito-semibold;
+	}
+	.description {
+		@apply text-base sm:text-lg;
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+		display: none;
+	}
+	input[type="number"] {
+		-moz-appearance: textfield;
+	}
+	.input_container {
+		@apply relative w-full bg-transparent my-4 rounded border-2 border-gray-300 pb-2;
+	}
+	.input_container > label {
+		@apply px-2 pt-2 sm:px-4 w-full block text-sm;
+	}
+	.input_container > input,
+	.input_container > select,
+	.input_container > div,
+	.input_container > textarea {
+		@apply w-full bg-transparent outline-none border-none text-base px-2 sm:px-4 mt-2 resize-none;
+	}
+	.input_container > svg {
+		@apply absolute top-1/2 -translate-y-1/2 right-2;
+	}
+	.primary_button {
+		@apply outline-none border-2 border-primary bg-primary text-white py-3 px-12 rounded-md font-semibold tracking-wider cursor-pointer transition-colors duration-300 hover:bg-hover text-center;
+	}
+	.secondary_button {
+		@apply outline-none border-2 border-primary bg-transparent text-primary py-3 px-12 rounded-md font-semibold tracking-wider cursor-pointer transition-colors duration-300 hover:bg-hover hover:text-white text-center;
+	}
+	.danger_button {
+		@apply outline-none border-2 border-red-600 bg-red-600 text-white py-3 px-12 rounded-md font-semibold tracking-wider cursor-pointer transition-colors duration-300 hover:bg-red-700 text-center;
+	}
+}
